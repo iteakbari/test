@@ -1,0 +1,302 @@
+@font-face {
+    font-family: cairo;
+    src: url("./../fonts/Cairo/Cairo-VariableFont_wght.ttf"), url("./../fonts/Cairo/static/Cairo-Black.ttf"),
+        url("./../fonts/Cairo/static/Cairo-Bold.ttf"), url("./../fonts/Cairo/static/Cairo-ExtraBold.ttf"),
+        url("./../fonts/Cairo/static/Cairo-ExtraLight.ttf"), url("./../fonts/Cairo/static/Cairo-Light.ttf"),
+        url("./../fonts/Cairo/static/Cairo-Medium.ttf"), url("./../fonts/Cairo/static/Cairo-SemiBold.ttf"),
+        url("./../fonts/Cairo/static/Cairo-Regular.ttf");
+}
+
+$main-color: #002447;
+$second-color: #79c5e7;
+$black: #353535;
+$error: #ea4c36;
+$warning: #f4cd30;
+$bgc: #fffaf7;
+
+body {
+    position: relative;
+    font-family: sans-serif;
+    background-color: $bgc;
+    &::-webkit-scrollbar {
+        width: 1px;
+    }
+    &::-webkit-scrollbar-track {
+        background-color: transparent;
+    }
+    &::-webkit-scrollbar-thumb {
+        background-color: transparent;
+    }
+}
+.k-wrapper {
+    min-height: 100vh;
+    // font-family: sans-serif;
+    font-weight: 300;
+    color: $main-color;
+    position: relative;
+    display: grid;
+    grid-template-columns: 250px auto;
+}
+
+section {
+    height: 100vh;
+    font-weight: 100;
+    align-content: center;
+    align-items: center;
+    display: grid;
+}
+
+.k-section1{
+    background-color: #94a3b8;
+}
+.k-section2{
+    background-color: #f87171;
+}
+.k-section3{
+    background-color: #34d399;
+}
+.k-section4{
+    background-color: #a78bfa;
+}
+.k-section5{
+    background-color: #fb7185;
+}
+.k-section6{
+    background-color: #a78bfa;
+}
+
+.k-navUl {
+    position: sticky;
+    top: 60px;
+    // height: calc(100vh - 70px);
+    height: 100vh;
+    display: grid;
+    align-items: flex-end;
+    align-content: flex-end;
+    transition: all 0.15s ease-out;
+    font-size: 12px;
+    font-weight: 300;
+    width: 100%;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+        position: relative;
+        transition: all 0.3s ease-out;
+        transition: transform 500ms ease-in-out;
+
+        a {
+            display: block;
+            padding: 0;
+            color: $main-color;
+            font-family: cairo;
+            padding: 0 10px;
+            transition: all 0.15s ease-out;
+            height: 25px;
+
+            &:hover {
+                background-color: transparent;
+                padding-left: 1em;
+            }
+
+            &:focus {
+                background-color: transparent;
+            }
+            &.active {
+                pointer-events: none;
+                // height: 450px;
+                transition: height 300ms ease-in;
+                font-weight: bold;
+                font-size: 14px;
+                transition: font-weight 300ms, font-size 300ms;
+            }
+        }
+    }
+}
+
+#loading {
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    z-index: 999;
+    background-color: $bgc;
+    background-image: url("./../img/Asset\ 10\ 1.svg");
+    background-repeat: no-repeat;
+    // background-size: cover;
+    background-position: center;
+}
+
+// #section2{
+//     display: flex;
+//     align-items: flex-start;
+//     lottie-player{
+//         position: sticky;
+//         top: 100px;
+//     }
+// }
+
+.k-btn-primary {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    background-color: $main-color;
+    color: $second-color;
+    text-decoration: none;
+    border: 1px solid $main-color;
+    transition: all 0.3s;
+    font-weight: bold;
+    &:hover {
+        background-color: $bgc;
+        color: $main-color;
+    }
+}
+
+.k-btn-warning {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    background-color: $warning;
+    color: $main-color;
+    text-decoration: none;
+    border: 1px solid $warning;
+    transition: all 0.3s;
+    font-weight: bold;
+    &:hover {
+        background-color: #e9be10;
+    }
+}
+
+.k-btn-default {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.5rem 1.5rem;
+    background-color: $bgc;
+    color: $main-color;
+    text-decoration: none;
+    border: 1px solid $main-color;
+    font-weight: bold;
+    transition: all 0.3s;
+    &:hover {
+        background-color: $main-color;
+        color: $second-color;
+    }
+}
+
+.k-fixed {
+    position: fixed;
+    top: 20px;
+    left: 25px;
+}
+
+.k-services {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 380px));
+    align-content: center;
+    width: 100%;
+    height: 100%;
+    gap: 40px 90px;
+    div {
+        text-align: center;
+    }
+    h5 {
+        font-weight: bold;
+    }
+}
+
+.k-logo {
+    display: grid;
+    gap: 30px;
+    > span {
+        display: flex;
+        justify-content: center;
+        width: 100%;
+    }
+    div {
+        display: flex;
+        gap: 33px;
+        justify-content: center;
+    }
+}
+.k-fixed-logo {
+    position: fixed;
+    top: 0;
+    z-index: 99;
+    display: flex;
+    transition: all 0.3s;
+    background-color: $bgc;
+    width: 85%;
+    right: 0;
+    justify-content: center;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    img {
+        max-height: 50px;
+    }
+    > span {
+        width: max-content;
+    }
+    div {
+        gap: 25px;
+        img {
+            max-height: 40px;
+        }
+    }
+}
+
+canvas{
+    width: 300px !important;
+    height: 300px !important;
+}
+
+.k-fs-13{
+    font-size: 13px !important;
+}
+
+.k-chart-info{
+    li{
+        list-style-type: none;
+        display: grid;
+        grid-template-columns: repeat(2,50%);
+        margin: 5px 0;
+        >span{
+        padding: 7px;
+        font-size: 13px;
+            &:first-child{
+                background-color: #fef2e6;
+                text-align: center;
+            }
+            &:last-child{
+                text-align: right;
+                background-color: #fff;
+            }
+        }
+        &:nth-child(1){
+            border-left: 5px solid #F4CD30;
+        }
+        &:nth-child(2){
+            border-left: 5px solid $error;
+        }
+        &:nth-child(3){
+            border-left: 5px solid $second-color;
+        }
+        &:nth-child(4){
+            border-left: 5px solid $main-color;
+        }
+        &:nth-child(5){
+            border-left: 5px solid #f5f5f5;
+        }
+        &:nth-child(6){
+            border-left: 5px solid $main-color;
+        }
+        &:last-child{
+            >span:first-child{
+                background-color: $main-color;
+                color: #fff;
+            }
+        }
+    }
+}
